@@ -79,7 +79,7 @@ export function SearchBar({
           <div className="search-bar-left">
             <img
               className="search-icon"
-              src=".././src/assets/icons/icon-search.svg"
+              src="/icon-search.svg"
               alt="search icon"
             />
             <input
