@@ -1,0 +1,94 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+@media only screen and (min-width: 320px) {
+  .dark-theme {
+    header {
+      .logo {
+        color: $white-dark-mode;
+      }
+      .mode-switch {
+        &:hover {
+          .switch-name {
+            color: $blue-hover-dark-mode;
+            transition: 0.2s ease;
+          }
+          .sun-icon {
+            path {
+              fill: $blue-hover-dark-mode;
+              transition: 0.2s ease;
+            }
+          }
+        }
+        .switch-name {
+          color: $white-dark-mode;
+        }
+        .sun-icon {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .search-bar {
+      .search-wrapper {
+        background-color: $dark-blue-dark-mode;
+        box-shadow: none;
+      }
+      input {
+        color: $white-dark-mode;
+
+        &::placeholder {
+          color: $white-dark-mode;
+        }
+      }
+    }
+
+    .main {
+      background-color: $dark-blue-dark-mode;
+      box-shadow: none;
+
+      .title {
+        .profile-name,
+        .profile-joined,
+        .profile-bio {
+          color: $white-dark-mode;
+        }
+      }
+
+      .follower {
+        background-color: $black-dark-mode;
+        .follower-title,
+        .follower-number {
+          color: $white-dark-mode;
+        }
+      }
+
+      .location {
+        .location-icon {
+          path {
+            fill: $white-dark-mode;
+          }
+        }
+        .location-content {
+          color: $white-dark-mode;
+          a {
+            color: $white-dark-mode;
+
+            &:visited {
+              color: $white-dark-mode;
+            }
+          }
+        }
+      }
+      .location-notavailable {
+        color: $white-dark-mode;
+        opacity: 0.5;
+
+        .not-available {
+          margin-left: 1rem;
+          font-size: 0.65rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@media only screen and (min-width: 320px) {
+  .dark-theme header .logo {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme header .mode-switch:hover .switch-name {
+    color: hsl(222, 44%, 70%);
+    transition: 0.2s ease;
+  }
+  .dark-theme header .mode-switch:hover .sun-icon path {
+    fill: hsl(222, 44%, 70%);
+    transition: 0.2s ease;
+  }
+  .dark-theme header .mode-switch .switch-name {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme header .mode-switch .sun-icon {
+    margin-left: 0.5rem;
+  }
+  .dark-theme .search-bar .search-wrapper {
+    background-color: hsl(222, 41%, 20%);
+    box-shadow: none;
+  }
+  .dark-theme .search-bar input {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .search-bar input::-moz-placeholder {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .search-bar input::placeholder {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main {
+    background-color: hsl(222, 41%, 20%);
+    box-shadow: none;
+  }
+  .dark-theme .main .title .profile-name,
+  .dark-theme .main .title .profile-joined,
+  .dark-theme .main .title .profile-bio {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .follower {
+    background-color: hsl(220, 40%, 13%);
+  }
+  .dark-theme .main .follower .follower-title,
+  .dark-theme .main .follower .follower-number {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .location .location-icon path {
+    fill: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .location .location-content {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .location .location-content a {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .location .location-content a:visited {
+    color: hsl(0, 0%, 100%);
+  }
+  .dark-theme .main .location-notavailable {
+    color: hsl(0, 0%, 100%);
+    opacity: 0.5;
+  }
+  .dark-theme .main .location-notavailable .not-available {
+    margin-left: 1rem;
+    font-size: 0.65rem;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  cursor: default;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 320px) {
+  body {
+    padding: 1.5rem 1rem 4rem 1rem;
+    background-color: hsl(227, 100%, 98%);
+  }
+  body header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body header .logo {
+    font-family: "Space Mono", monospace;
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 2.375rem;
+    font-size: calc(1vw + 1rem);
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+  body header .mode-switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: hsl(217, 35%, 45%);
+  }
+  body header .mode-switch:hover .switch-name {
+    color: hsl(217, 21%, 21%);
+    transition: 0.2s ease;
+  }
+  body header .mode-switch:hover .moon-icon path {
+    fill: hsl(217, 21%, 21%);
+    transition: 0.2s ease;
+  }
+  body header .theme-switch-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  body header .moon-icon {
+    max-width: 20px;
+    max-height: 20px;
+    margin-left: 0.5rem;
+  }
+  body .search-bar {
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  body .search-bar .search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.6rem;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    height: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  }
+  body .search-bar .search-bar-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  body .search-bar .search-icon {
+    width: 0.8rem;
+    margin-right: 0.35rem;
+  }
+  body .search-bar input {
+    border: none;
+    background-color: transparent;
+    font-family: "Space Mono", monospace;
+    width: 85%;
+    font-size: 0.65rem;
+    cursor: pointer;
+  }
+  body .search-bar input::-moz-placeholder {
+    font-size: 0.5rem;
+  }
+  body .search-bar input::placeholder {
+    font-size: 0.5rem;
+  }
+  body .search-bar input:focus {
+    outline: none;
+  }
+  body .search-bar .button-search {
+    font-family: "Space Mono", monospace;
+    border: none;
+    background-color: hsl(212, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 55%;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  body .search-bar .button-search:hover {
+    opacity: 0.65;
+    transition: 0.2s ease-out;
+  }
+  body .search-bar .no-results {
+    position: absolute;
+    color: hsl(0, 91%, 62%);
+    font-size: 0.5rem;
+    font-weight: 700;
+    right: 10px;
+  }
+  body .search-bar .clear-no-results {
+    display: none;
+  }
+  body .main {
+    background-color: hsl(0, 0%, 100%);
+    margin-top: 0.75rem;
+    border-radius: 15px;
+    padding: 1.5rem 1rem 3rem 1rem;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  }
+  body .title-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  body .avatar {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+  }
+  body .title-profile {
+    padding-left: 0.85rem;
+    height: 3.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  body .title-profile .profile-name {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    font-weight: 700;
+    font-size: 70%;
+    line-height: 1rem;
+  }
+  body .title-profile .profile-login {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: hsl(212, 100%, 50%);
+    font-size: 50%;
+    margin-top: -0.25rem;
+  }
+  body .title-profile .profile-joined {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 50%;
+    line-height: 1rem;
+    color: hsl(217, 20%, 51%);
+  }
+  body .profile-bio {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 55%;
+    line-height: 1rem;
+    color: hsl(217, 20%, 51%);
+    margin-top: 1.25rem;
+  }
+  body .follower {
+    background-color: hsl(227, 100%, 98%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    margin-top: 1.25rem;
+  }
+  body .follower-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .follower-title {
+    font-size: 0.5rem;
+    color: hsl(217, 35%, 45%);
+  }
+  body .follower-number {
+    color: hsl(217, 21%, 21%);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+  body .location {
+    margin-top: 1.25rem;
+  }
+  body .location-row {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  body .location-icon {
+    width: 0.7rem;
+  }
+  body .location-content {
+    font-size: 0.65rem;
+    color: hsl(217, 20%, 51%);
+    margin-left: 1rem;
+  }
+  body .location-content a {
+    text-decoration: none;
+  }
+  body .location-content a:hover {
+    text-decoration: underline;
+  }
+  body .location-content a:visited {
+    color: hsl(217, 20%, 51%);
+  }
+  body .location-notavailable {
+    display: flex;
+    align-items: center;
+    margin-top: 0.75rem;
+    color: hsl(217, 35%, 45%);
+    opacity: 0.5;
+  }
+  body .location-notavailable .not-available {
+    margin-left: 1rem;
+    font-size: 0.65rem;
+  }
+  body .location-pin {
+    width: 13.753px;
+    height: 20px;
+    margin-right: 6.247px;
+  }
+  body .location-link {
+    width: 20px;
+    height: 19.945px;
+  }
+  body .location-twitter {
+    width: 20px;
+    height: 18px;
+  }
+  body .location-company {
+    width: 20px;
+    height: 19.852px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body {
+    padding: 4rem;
+  }
+  body .mode-switch .switch-name {
+    font-size: 0.8rem;
+  }
+  body .search-bar .search-wrapper {
+    position: relative;
+    height: 3rem;
+  }
+  body .search-bar .search-bar-left {
+    position: static;
+  }
+  body .search-bar .search-icon {
+    width: 1rem;
+    margin: 0.5rem;
+  }
+  body .search-bar input {
+    font-size: 0.8rem;
+  }
+  body .search-bar input::-moz-placeholder {
+    font-size: 0.65rem;
+  }
+  body .search-bar input::placeholder {
+    font-size: 0.65rem;
+  }
+  body .search-bar .button-search {
+    font-size: 70%;
+    padding: 0.5rem 0.85rem;
+  }
+  body .search-bar .no-results {
+    position: absolute;
+    color: hsl(0, 91%, 62%);
+    font-size: 0.6rem;
+    font-weight: 700;
+    right: 110px;
+  }
+  body .search-bar .clear-no-results {
+    display: none;
+  }
+  body .main {
+    padding: 2rem;
+  }
+  body .title-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  body .avatar {
+    width: 90px;
+    height: 90px;
+  }
+  body .title-profile {
+    padding-left: 1.5rem;
+    height: 90px;
+  }
+  body .title-profile .profile-name {
+    font-size: 90%;
+  }
+  body .title-profile .profile-login {
+    font-size: 70%;
+    margin-top: -0.1rem;
+  }
+  body .title-profile .profile-joined {
+    font-size: 60%;
+  }
+  body .follower-title {
+    font-size: 0.6rem;
+  }
+  body .follower-number {
+    font-size: 0.8rem;
+  }
+  body .location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  body .location-row {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  body .location-content {
+    font-size: 0.6rem;
+    margin-left: 0.5rem;
+  }
+  body .location-notavailable .not-available {
+    margin-left: 0.5rem;
+    font-size: 0.6rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

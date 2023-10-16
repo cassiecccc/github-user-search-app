@@ -1,0 +1,414 @@
+@import "dark";
+@import "colors";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  cursor: default;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//* mobile query
+
+@media only screen and (min-width: 320px) {
+  body {
+    padding: 1.5rem 1rem 4rem 1rem;
+    background-color: $light-blue-light-mode;
+
+    //* header section
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        font-family: "Space Mono", monospace;
+        @include h1-font;
+        font-size: calc(1vw + 1rem);
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .mode-switch {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include h4-font;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: $blue-grey-light-mode;
+        &:hover {
+          .switch-name {
+            color: $black-light-mode;
+            transition: 0.2s ease;
+          }
+          .moon-icon {
+            path {
+              fill: $black-light-mode;
+              transition: 0.2s ease;
+            }
+          }
+        }
+      }
+
+      .theme-switch-wrapper {
+        display: flex;
+        flex-direction: row;
+      }
+      .moon-icon {
+        max-width: 20px;
+        max-height: 20px;
+        margin-left: 0.5rem;
+      }
+    }
+
+    //search bar section
+    .search-bar {
+      margin-top: 1rem;
+      cursor: pointer;
+
+      .search-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.6rem;
+        width: 100%;
+        background-color: $white-light-mode;
+        height: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+      }
+      .search-bar-left {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .search-icon {
+        width: 0.8rem;
+        margin-right: 0.35rem;
+      }
+
+      input {
+        border: none;
+        background-color: transparent;
+        font-family: "Space Mono", monospace;
+        width: 85%;
+        font-size: 0.65rem;
+        cursor: pointer;
+
+        &::placeholder {
+          font-size: 0.5rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+      .button-search {
+        font-family: "Space Mono", monospace;
+        border: none;
+        background-color: $blue-light-mode;
+        color: $white-light-mode;
+        @include h4-font;
+        font-size: 55%;
+        padding: 0.3rem 0.6rem;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.65;
+          transition: 0.2s ease-out;
+        }
+      }
+
+      .no-results {
+        position: absolute;
+        color: $alert-light-mode;
+        font-size: 0.5rem;
+        font-weight: 700;
+        right: 10px;
+      }
+
+      .clear-no-results {
+        display: none;
+      }
+    }
+
+    //main section
+    .main {
+      background-color: $white-light-mode;
+      margin-top: 0.75rem;
+      border-radius: 15px;
+      padding: 1.5rem 1rem 3rem 1rem;
+      box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    }
+
+    .title-top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .avatar {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 50%;
+    }
+
+    .title-profile {
+      padding-left: 0.85rem;
+      height: 3.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .profile-name {
+        @include h3-font;
+        font-weight: 700;
+        font-size: 70%;
+        line-height: 1rem;
+      }
+      .profile-login {
+        @include h4-font;
+        color: $blue-light-mode;
+        font-size: 50%;
+        margin-top: -0.25rem;
+      }
+
+      .profile-joined {
+        @include h4-font;
+        font-size: 50%;
+        line-height: 1rem;
+        color: $grey-light-mode;
+      }
+    }
+    .profile-bio {
+      @include h4-font;
+      font-size: 55%;
+      line-height: 1rem;
+      color: $grey-light-mode;
+      margin-top: 1.25rem;
+    }
+
+    //follower section
+    .follower {
+      background-color: $light-blue-light-mode;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .follower-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .follower-title {
+      font-size: 0.5rem;
+      color: $blue-grey-light-mode;
+    }
+    .follower-number {
+      color: $black-light-mode;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    //location section
+    .location {
+      margin-top: 1.25rem;
+    }
+
+    .location-row {
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+    .location-icon {
+      width: 0.7rem;
+    }
+    .location-content {
+      font-size: 0.65rem;
+      color: $grey-light-mode;
+      margin-left: 1rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:visited {
+          color: $grey-light-mode;
+        }
+      }
+    }
+
+    .location-notavailable {
+      display: flex;
+      align-items: center;
+      margin-top: 0.75rem;
+      color: $blue-grey-light-mode;
+      opacity: 0.5;
+
+      .not-available {
+        margin-left: 1rem;
+        font-size: 0.65rem;
+      }
+    }
+
+    //icon size
+
+    .location-pin {
+      width: 13.753px;
+      height: 20px;
+      margin-right: 6.247px;
+    }
+
+    .location-link {
+      width: 20px;
+      height: 19.945px;
+    }
+
+    .location-twitter {
+      width: 20px;
+      height: 18px;
+    }
+
+    .location-company {
+      width: 20px;
+      height: 19.852px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    padding: 4rem;
+
+    //*header
+    .mode-switch {
+      .switch-name {
+        font-size: 0.8rem;
+      }
+    }
+
+    //*search bar
+    .search-bar {
+      .search-wrapper {
+        position: relative;
+        height: 3rem;
+      }
+      .search-bar-left {
+        position: static;
+      }
+      .search-icon {
+        width: 1rem;
+        margin: 0.5rem;
+      }
+      input {
+        font-size: 0.8rem;
+        &::placeholder {
+          font-size: 0.65rem;
+        }
+      }
+      .button-search {
+        font-size: 70%;
+        padding: 0.5rem 0.85rem;
+      }
+
+      .no-results {
+        position: absolute;
+        color: $alert-light-mode;
+        font-size: 0.6rem;
+        font-weight: 700;
+        right: 110px;
+      }
+
+      .clear-no-results {
+        display: none;
+      }
+    }
+
+    //*main
+    .main {
+      padding: 2rem;
+    }
+
+    .title-top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+    }
+
+    .title-profile {
+      padding-left: 1.5rem;
+      height: 90px;
+
+      .profile-name {
+        font-size: 90%;
+      }
+      .profile-login {
+        font-size: 70%;
+        margin-top: -0.1rem;
+      }
+
+      .profile-joined {
+        font-size: 60%;
+      }
+    }
+
+    .follower-title {
+      font-size: 0.6rem;
+    }
+    .follower-number {
+      font-size: 0.8rem;
+    }
+
+    .location {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .location-row {
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .location-content {
+      font-size: 0.6rem;
+      margin-left: 0.5rem;
+    }
+
+    .location-notavailable {
+      .not-available {
+        margin-left: 0.5rem;
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
