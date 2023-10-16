@@ -14,12 +14,11 @@ export function Title({
             <img className="avatar" src={data.avatar_url} alt="user avatar" />
 
             <div className="title-profile">
-              <div className="profile-name profile">{data.name}</div>
+              <div className="profile-name">{data.name}</div>
               <div className="profile-login">@{data.login}</div>
-            </div>
-
-            <div className="profile-joined">
-              Joined {searchDate.split("T").slice(0, 1)}
+              <div className="profile-joined">
+                Joined {searchDate.split("T").slice(0, 1)}
+              </div>
             </div>
           </div>
           <div className="profile-bio">
